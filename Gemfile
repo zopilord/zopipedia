@@ -25,6 +25,7 @@ group :development, :test do
     gem 'rspec-rails'
     gem 'capybara'
     gem 'factory_girl_rails'
+    gem "database_cleaner", "~> 1.2.0"
 end    
 
 gem 'jquery-rails'
