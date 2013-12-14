@@ -1,9 +1,18 @@
 Zopipedia::Application.routes.draw do
   resources :wikis
+  resources :charges
 
   devise_for :users
 
   root :to => 'welcome#index'
+  resources :users, only: [:show]
+  resources :orders do
+  collection do
+    get :paid
+    get :revoked
+    post :ipn
+  end
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -5,6 +5,7 @@ class WikisController < ApplicationController
 
 	def show
 		@wiki = Wiki.find(params[:id])
+		authorize! :read, @wiki, message: "You need to be signed-in to see that wiki"
 	end
 
 	def new
@@ -14,8 +15,12 @@ class WikisController < ApplicationController
 	def create
 		@wiki = current_user.wikis.build(params[:wiki])
 		if @wiki.save
-			flash[:notice] = "Wiki was Saved!"
-			redirect_to [@wiki]		
+			if @wiki.private == true
+				flash[:notice] = "You created a new private Wiki!"
+			else
+				flash[:notice] = "You created a new public Wiki!"
+			end
+			redirect_to [@wiki]
 		else
 			flash[:error] = "There was a problem saving the Wiki"	
 			render :new

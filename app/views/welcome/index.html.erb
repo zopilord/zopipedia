@@ -1,2 +1,23 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="row index">
+  <div class="small-6 large-2 columns"></div>
+  <div class="small-6 large-8 columns middle">
+  	<h4>Bloccipedia: Social, Markdown Wikis</h4>
+  	  <div class="container">
+  	  	<h5>Create and share Markdown Wikis</h5>
+  	  	<%= link_to "Sign up", new_user_registration_path, class: "button radius " %>
+  	  </div>
+  	  <div class="row">
+  	  	<div class="large-6 columns">
+  	  		<%= link_to '#' do %>
+  	  		  Free Plan <%= image_tag('gift-box.svg') %>
+  	  		<% end %>
+  	  	</div>
+  	  	<div class="large-6 columns">
+  	  			<%= link_to '#' do %>
+  	  		  	Premium Plan <%= image_tag('paper-bag.svg') %>
+  	  		  <% end %>
+  	  	</div>
+  	  </div>
+  </div>
+  <div class="small-12 large-2 columns"></div>
+</div>
