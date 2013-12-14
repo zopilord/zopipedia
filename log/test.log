@@ -11024,3 +11024,5 @@ Started GET "/" for 127.0.0.1 at 2013-12-05 16:07:20 -0600
 Processing by WelcomeController#index as HTML
 Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
   [1m[35m (0.2ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
