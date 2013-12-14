@@ -1,0 +1,5 @@
+<p><%= @wiki.title %></p>
+<p><%= markdown(@wiki.body) %></p>
+<%= form_for [@wiki] do |f| %>
+<%= User.all %>
+<% end %>	

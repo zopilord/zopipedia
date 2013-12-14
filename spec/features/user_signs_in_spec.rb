@@ -6,7 +6,7 @@ feature 'User signs in' do
       visit new_user_session_path
       fill_in  'Email', with: user.email
       fill_in 'Password', with: user.password
-      click_button "Create User"
+      click_button "Sign In"
       expect(page).to have_content('Signed in successfully.')
     end
 
@@ -15,7 +15,7 @@ feature 'User signs in' do
     	visit new_user_session_path
     	fill_in 'Email', with: "user@test.com"
     	fill_in 'Password', with: user.password
-    	click_button 'Create User'
+    	click_button 'Sign In'
     	expect(page).to have_content("Invalid email or password.")
     end
     
@@ -24,7 +24,7 @@ feature 'User signs in' do
     	visit new_user_session_path
     	fill_in 'Email', with: user.email
     	fill_in 'Password', with: "fooobar"
-    	click_button 'Create User'
+    	click_button 'Sign In'
     	expect(page).to have_content("Invalid email or password.")	
     end
 
@@ -33,7 +33,7 @@ feature 'User signs in' do
     	visit new_user_session_path
     	fill_in 'Email', with: ""
     	fill_in 'Password', with: ""
-    	click_button 'Create User'
+    	click_button 'Sign In'
     	expect(page).to have_content("Invalid email or password.")	
     end
 

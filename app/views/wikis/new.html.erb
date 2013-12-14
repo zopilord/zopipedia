@@ -1,8 +1,24 @@
 <%= form_for [@wiki] do |f| %>
-	<%= f.label :title %>
-		<%= f.text_field :title %>
-	<%= f.label :body %>
-		<%= f.text_field :body %>
-	<%= f.submit "Create Wiki" %>
+	<div class="row">
+		<div class="large-12 columns">
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<%= f.label :body %>
+		<%= f.text_area :body, style:"height: 300px" %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<%= f.label :private %>
+		<%= f.check_box :private %>
+		</div>
+	</div>
+	<div class="row">
+		<%= f.submit "Create Wiki", class: "round button tiny" %>
+	</div>
 <% end %>		
 		

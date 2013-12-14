@@ -28,10 +28,12 @@ group :development, :test do
     gem "database_cleaner", "~> 1.2.0"
 end    
 
+gem 'redcarpet', '1.17.2'
 gem 'jquery-rails'
-
 gem 'devise'
-
+gem 'figaro'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem "cancan"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
